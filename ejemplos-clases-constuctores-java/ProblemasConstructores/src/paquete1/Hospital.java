@@ -23,8 +23,13 @@ public class Hospital {
     ciudad: Loja
     numeroDoctores: 100
     numeroEnfermeros: 200
-    
     */
+    public Hospital(){
+    nombre = "Isidro Ayora";
+    ciudad = "Loja";
+    numeroDoctores = 100;
+    numeroEnfermeros = 200;
+    }
     
     public void establecerNombre(String n){
         nombre = n;
@@ -58,4 +63,18 @@ public class Hospital {
         return numeroEnfermeros;
     }
     
+    @Override
+    public String toString() {
+        
+        String objeto = String.format("La informacion del hospital es \n"
+                + "Nombre: %S\n"
+                + "Ciudad: %s\n"
+                + "Numero de Doctores: %d\n"
+                + "Numero de Enfermeros: %d\n",
+                obtenerNombre(),
+                obtenerCiudad(),
+                obtenerNumeroDoctores(),
+                obtenerNumeroEnfermeros());
+        return objeto;
+    }
 }
