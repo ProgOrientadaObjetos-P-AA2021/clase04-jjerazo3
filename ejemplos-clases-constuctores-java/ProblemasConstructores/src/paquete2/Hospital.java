@@ -20,6 +20,13 @@ public class Hospital {
         valores que serán asignados a los atributos.
     
     */
+    public Hospital(String nom, String cid, 
+            int ndoc, int nenf){
+        nombre = nom;
+        ciudad = cid;
+        numeroDoctores = ndoc;
+        numeroEnfermeros = nenf;
+    }
     
     public void establecerNombre(String n){
         nombre = n;
@@ -53,4 +60,18 @@ public class Hospital {
         return numeroEnfermeros;
     }
     
+    @Override
+    public String toString() {
+        
+        String objeto = String.format("La informacion del hospital es \n"
+                + "Nombre: %S\n"
+                + "Ciudad: %S\n"
+                + "Numero de Doctores: %d\n"
+                + "Numero de Enfermos: %d\n",
+                obtenerNombre(),
+                obtenerCiudad(),
+                obtenerNumeroDoctores(),
+                obtenerNumeroEnfermeros());
+        return objeto;
+    }
 }
